@@ -1,16 +1,46 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 
 const CustomerServiceForm = () => {
+
+  const [fname, setFname] = useState('');
+  const [lname, setLname] = useState('');
+  const [email, setEmail] = useState('');
+  const [issue, setIssue] = useState('');
+  const [subject, setSubject] = useState('');
+  const [details, setDetails] = useState('');
+  const [file, setFile] = useState(null);
+  
+  const handleFileChange = (e) => {
+    const selectFile = e.target.files[0];
+    setFile(selectFile);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(fname);
+    console.log(lname);
+    console.log(email);
+    console.log(issue);
+    console.log(subject);
+    console.log(details);
+    
+  };
+
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-md">
       <h1 className="text-2xl font-semibold mb-6">Customer Service Form</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="fname" className="block font-semibold">First Name</label>
           <input
             type="text"
             id="fname"
-            name="fname"
+            placeholder='First name'
+            onChange={(e) => setFname(e.target.value)}
+            value={fname}
             className="w-full border border-gray-300 p-2 rounded-md"
             required
           />
@@ -20,7 +50,9 @@ const CustomerServiceForm = () => {
           <input
             type="text"
             id="lname"
-            name="lname"
+            placeholder="Last name"
+            onChange={(e) => setLname(e.target.value)}
+            value={lname}
             className="w-full border border-gray-300 p-2 rounded-md"
             required
           />
@@ -30,16 +62,19 @@ const CustomerServiceForm = () => {
           <input
             type="email"
             id="email"
-            name="email"
+            placeholder='email'
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
             className="w-full border border-gray-300 p-2 rounded-md"
             required
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="issue" className="block font-semibold">Issue</label>
+          <label htmlFor="issue" className="block font-semibold">What's the issue?</label>
           <select
             id="issue"
-            name="issue"
+            onChange={(e) => setIssue(e.target.value)}
+            value={issue}
             className="w-full border border-gray-300 p-2 rounded-md"
             required
           >
@@ -54,7 +89,9 @@ const CustomerServiceForm = () => {
           <input
             type="text"
             id="subject"
-            name="subject"
+            placeholder='Subject'
+            onChange={(e) => setSubject(e.target.value)}
+            value={subject}
             className="w-full border border-gray-300 p-2 rounded-md"
             required
           />
@@ -63,7 +100,9 @@ const CustomerServiceForm = () => {
           <label htmlFor="details" className="block font-semibold">Additional Details</label>
           <textarea
             id="details"
-            name="details"
+            placeholder='Additional details'
+            onChange={(e) => setDetails(e.target.value)}
+            value={details}
             rows="4"
             className="w-full border border-gray-300 p-2 rounded-md"
           ></textarea>
@@ -74,6 +113,7 @@ const CustomerServiceForm = () => {
             type="file"
             id="file"
             name="file"
+            onChange={handleFileChange}
             className="border border-gray-300 p-2 rounded-md"
           />
         </div>
