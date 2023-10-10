@@ -65,13 +65,13 @@ const CustomerServiceForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto my-10 shadow-md rounded-md bg-[#C7EFF8]">
-      <div className='bg-gradient-to-r from-[#3054D9] to-[#50ADF2] p-2 mb-2'>
-        <h1 className="text-center text-white text-[32px] font-extrabold">Support Form</h1>
-        <p className='text-center text-neutral-300 text-[15px] font-semibold'>Need Assistance or Have Questions? <br />We're Here to Help!</p>
+    <div className="max-w-md mx-auto my-10 shadow-md rounded-xl bg-[#C7EFF8]">
+      <div className='bg-gradient-to-r from-[#3054D9] to-[#50ADF2] p-5 mb-2 rounded-t-xl'>
+        <h1 className="text-center text-white text-[32px] font-extrabold pb-1">Support Form</h1>
+        <p className='text-center text-neutral-300 text-[16px] font-semibold'>Need Assistance or Have Questions? <br />We're Here to Help!</p>
       </div>
 
-      <form onSubmit={handleSubmit} className='px-6 pt-2 pb-6'>
+      <form onSubmit={handleSubmit} className='px-6 pt-2 pb-8'>
         <div className="mb-4">
           <label htmlFor="fname" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">First Name</label>
           <input
