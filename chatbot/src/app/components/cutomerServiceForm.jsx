@@ -66,7 +66,7 @@ const CustomerServiceForm = () => {
 
   return (
     <div className="max-w-md mx-auto my-10 shadow-md rounded-xl bg-[#C7EFF8]">
-      <div className='bg-gradient-to-r from-[#3054D9] to-[#50ADF2] p-5 mb-2 rounded-t-xl'>
+      <div className='bg-gradient-to-r from-[#3054D9] to-[#50ADF2] p-5 mb-2 rounded-t-xl drop-shadow-lg'>
         <h1 className="text-center text-white text-[32px] font-extrabold pb-1">Support Form</h1>
         <p className='text-center text-neutral-300 text-[16px] font-semibold'>Need Assistance or Have Questions? <br />We're Here to Help!</p>
       </div>
