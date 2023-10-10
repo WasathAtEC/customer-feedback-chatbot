@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
+
 
 const CustomerServiceForm = () => {
 
@@ -64,8 +65,12 @@ const CustomerServiceForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-md">
-      <h1 className="text-2xl font-semibold mb-6">Customer Service Form</h1>
+    <div className="max-w-md mx-auto mt-10 shadow-md rounded-md bg-[#C7EFF8]">
+      <div className='bg-gradient-to-r from-[#3054D9] to-[#50ADF2] p-2 mb-2'>
+        <h1 className="text-center text-white text-[32px] font-extrabold">Support Form</h1>
+        <p className='text-center text-neutral-300 text-[15px] font-semibold'>Need Assistance or Have Questions? <br />We're Here to Help!</p>
+      </div>
+
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="fname" className="block font-semibold">First Name</label>
