@@ -80,44 +80,44 @@ const CustomerServiceForm = () => {
             placeholder='First name'
             onChange={(e) => {setFname(e.target.value); validateField('fname', e.target.value);}}
             value={fname}
-            className={`bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2  ${errors.fname ? 'border-red-500' : ''}`}
+            className={`bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1 ${errors.fname ? 'border-red-500' : ''}`}
             required
           />
           {errors.fname && <p>{errors.fname} </p>}
         </div>
         <div className="mb-4">
-          <label htmlFor="lname" className="block font-semibold">Last Name</label>
+          <label htmlFor="lname" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Last Name</label>
           <input
             type="text"
             id="lname"
             placeholder="Last name"
             onChange={(e) => {setLname(e.target.value); validateField('lname', e.target.value);}}
             value={lname}
-            className={`w-full border border-gray-300 p-2 rounded-md ${errors.lname ? 'border-red-500' : ''}`}
+            className={`bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1 ${errors.lname ? 'border-red-500' : ''}`}
             required
           />
           {errors.lname && <p>{errors.lname} </p>}
         </div>
         <div className="mb-4">
-          <label htmlFor="email" className="block font-semibold">Email</label>
+          <label htmlFor="email" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Email</label>
           <input
             type="email"
             id="email"
             placeholder='email'
             onChange={(e) => {setEmail(e.target.value); validateField('email', e.target.value);}}
             value={email}
-            className={`w-full border border-gray-300 p-2 rounded-md ${errors.email ? 'border-red-500' : ''}`}
+            className={`bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1 ${errors.email ? 'border-red-500' : ''}`}
             required
           />
           {errors.email && <p>{errors.email} </p>}
         </div>
         <div className="mb-4">
-          <label htmlFor="issue" className="block font-semibold">What's the issue?</label>
+          <label htmlFor="issue" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">What's the issue?</label>
           <select
             id="issue"
             onChange={(e) => setIssue(e.target.value)}
             value={issue}
-            className="w-full border border-gray-300 p-2 rounded-md"
+            className="bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1"
             required
           >
             <option value="" disabled>Select an issue</option>
@@ -127,37 +127,37 @@ const CustomerServiceForm = () => {
           </select>
         </div>
         <div className="mb-4">
-          <label htmlFor="subject" className="block font-semibold">Subject</label>
+          <label htmlFor="subject" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Subject</label>
           <input
             type="text"
             id="subject"
             placeholder='Subject'
             onChange={(e) => {setSubject(e.target.value); validateField('subject', e.target.value);}}
             value={subject}
-            className={`w-full border border-gray-300 p-2 rounded-md ${errors.subject ? 'border-red-500' : ''}`}
+            className={`bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1 ${errors.subject ? 'border-red-500' : ''}`}
             required
           />
           {errors.subject && <p>{errors.subject} </p>}
         </div>
         <div className="mb-4">
-          <label htmlFor="details" className="block font-semibold">Additional Details</label>
+          <label htmlFor="details" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Additional Details</label>
           <textarea
             id="details"
             placeholder='Additional details'
             onChange={(e) => setDetails(e.target.value)}
             value={details}
             rows="4"
-            className="w-full border border-gray-300 p-2 rounded-md"
+            className="bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1"
           ></textarea>
         </div>
         <div className="mb-4">
-          <label htmlFor="file" className="block font-semibold">File Upload</label>
+          <label htmlFor="file" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">File Upload</label>
           <input
             type="file"
             id="file"
             name="file"
             onChange={handleFileChange}
-            className="border border-gray-300 p-2 rounded-md"
+            className="bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1"
           />
         </div>
         <div className="text-center">
