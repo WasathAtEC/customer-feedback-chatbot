@@ -15,16 +15,16 @@ const ChatBotPage = () => {
                     <p className="text-stone-950 text-opacity-70 text-[15px] font-semibold ">How can I help you today?</p>
                 </div>
 
-                <div className="w-auto h-[68px] px-[21px] py-[9px] bg-gray-400 bg-opacity-50 rounded-[20px] shadow border border-stone-600 border-opacity-20 justify-center items-center gap-2.5 inline-flex mb-2">
+                <div className="w-auto h-[68px] px-[21px] py-[9px] bg-gray-400 bg-opacity-50 rounded-[20px] shadow border border-stone-600 border-opacity-20 justify-center items-center gap-2.5 inline-flex mb-4">
                     <p className="text-stone-950 text-opacity-70 text-[15px] font-semibold leading-[25px]">Please choose one of the topics. <br />What would you like to explore?</p>
                 </div>
 
-                <div>
-                    <div>issue 01</div>
-                    <div>issue 02</div>
-                    <div>issue 03</div>
-                    <div>issue 04</div>
-                    <div>issue 05</div>
+                <div className="w-auto h-auto gap-[18px] flex flex-wrap px-2">
+                    <div className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 01</div>
+                    <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 02</div>
+                    <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 03</div>
+                    <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 04</div>
+                    <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 05</div>
                 </div>
 
                 <div>
