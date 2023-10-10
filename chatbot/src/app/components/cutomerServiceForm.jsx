@@ -65,13 +65,13 @@ const CustomerServiceForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 shadow-md rounded-md bg-[#C7EFF8]">
+    <div className="max-w-md mx-auto my-10 shadow-md rounded-md bg-[#C7EFF8]">
       <div className='bg-gradient-to-r from-[#3054D9] to-[#50ADF2] p-2 mb-2'>
         <h1 className="text-center text-white text-[32px] font-extrabold">Support Form</h1>
         <p className='text-center text-neutral-300 text-[15px] font-semibold'>Need Assistance or Have Questions? <br />We're Here to Help!</p>
       </div>
 
-      <form onSubmit={handleSubmit} className='px-6 pt-2 pb-4'>
+      <form onSubmit={handleSubmit} className='px-6 pt-2 pb-6'>
         <div className="mb-4">
           <label htmlFor="fname" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">First Name</label>
           <input
@@ -139,7 +139,7 @@ const CustomerServiceForm = () => {
           />
           {errors.subject && <p>{errors.subject} </p>}
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label htmlFor="details" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Additional Details</label>
           <textarea
             id="details"
@@ -150,7 +150,7 @@ const CustomerServiceForm = () => {
             className="bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1"
           ></textarea>
         </div>
-        <div className="mb-4">
+        <div className="mb-8">
           <label htmlFor="file" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">File Upload</label>
           <input
             type="file"
@@ -163,7 +163,7 @@ const CustomerServiceForm = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+            className="w-[134px] h-11 bg-gradient-to-r from-blue-700 to-blue-400 rounded-md border border-stone-600 border-opacity-20 text-white text-lg font-semibold px-4 py-2 hover:from-blue-800 hover:to-blue-500 hover:text-blue-200"
           >
             Submit
           </button>
