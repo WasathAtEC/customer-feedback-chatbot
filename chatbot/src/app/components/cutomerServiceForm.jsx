@@ -71,16 +71,16 @@ const CustomerServiceForm = () => {
         <p className='text-center text-neutral-300 text-[15px] font-semibold'>Need Assistance or Have Questions? <br />We're Here to Help!</p>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='px-6 pt-2 pb-4'>
         <div className="mb-4">
-          <label htmlFor="fname" className="block font-semibold">First Name</label>
+          <label htmlFor="fname" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">First Name</label>
           <input
             type="text"
             id="fname"
             placeholder='First name'
             onChange={(e) => {setFname(e.target.value); validateField('fname', e.target.value);}}
             value={fname}
-            className={`w-full border border-gray-300 p-2 rounded-md ${errors.fname ? 'border-red-500' : ''}`}
+            className={`bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2  ${errors.fname ? 'border-red-500' : ''}`}
             required
           />
           {errors.fname && <p>{errors.fname} </p>}
