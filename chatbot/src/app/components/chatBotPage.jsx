@@ -35,8 +35,8 @@ const ChatBotPage = () => {
                     <p className="text-stone-950 text-opacity-70 text-[16px] font-semibold leading-[25px]">For complex issues,<br />please use our Support Form. <br /> We'll respond promptly.</p>
                 </div>
 
-                <div>
-                    <p>support form</p>
+                <div className="flex justify-center">
+                    <p className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mt-2">support form</p>
                 </div>
             </div>
             
