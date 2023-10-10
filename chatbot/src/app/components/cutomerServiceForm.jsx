@@ -71,7 +71,7 @@ const CustomerServiceForm = () => {
         <p className='text-center text-neutral-300 text-[16px] font-semibold'>Need Assistance or Have Questions? <br />We're Here to Help!</p>
       </div>
 
-      <form onSubmit={handleSubmit} className='px-6 pt-2 pb-8'>
+      <form onSubmit={handleSubmit} className='px-10 pt-2 pb-8'>
         <div className="mb-4">
           <label htmlFor="fname" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">First Name</label>
           <input

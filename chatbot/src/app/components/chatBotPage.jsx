@@ -15,7 +15,7 @@ const ChatBotPage = () => {
                     <p className="text-stone-950 text-opacity-70 text-[16px] font-semibold ">How can I help you today?</p>
                 </div>
 
-                <div className="w-auto h-[70px] px-[26px] py-[9px] bg-gray-400 bg-opacity-50 rounded-[20px] shadow border border-stone-600 border-opacity-20 justify-center items-center gap-2.5 inline-flex mb-5">
+                <div className="w-auto h-[70px] px-[21px] py-[9px] bg-gray-400 bg-opacity-50 rounded-[20px] shadow border border-stone-600 border-opacity-20 justify-center items-center gap-2.5 inline-flex mb-5">
                     <p className="text-stone-950 text-opacity-70 text-[16px] font-semibold leading-[28px]">Please choose one of the topics. <br />What would you like to explore?</p>
                 </div>
 
@@ -31,7 +31,7 @@ const ChatBotPage = () => {
                     
                 </div>
 
-                <div className="w-auto h-[96px] px-[21px] py-[9px] bg-gray-400 bg-opacity-50 rounded-[20px] shadow border border-stone-600 border-opacity-20 justify-center items-center gap-2.5 inline-flex my-4">
+                <div className="w-auto h-[98px] px-[21px] py-[9px] bg-gray-400 bg-opacity-50 rounded-[20px] shadow border border-stone-600 border-opacity-20 justify-center items-center gap-2.5 inline-flex my-4">
                     <p className="text-stone-950 text-opacity-70 text-[16px] font-semibold leading-[25px]">For complex issues,<br />please use our Support Form. <br /> We'll respond promptly.</p>
                 </div>
 
