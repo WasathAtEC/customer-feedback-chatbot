@@ -1,12 +1,10 @@
-import ChatBotPage from "./components/chatBotPage";
-import CustomerServiceForm from "./components/cutomerServiceForm";
+import ChatBotPage from "./(page)/chatBot/page";
+
 
 export default function Home() {
   return (
     <>
     <ChatBotPage />
-    <CustomerServiceForm />
-    
     </>
   )
 }
