@@ -1,9 +1,12 @@
+import Image from "next/image";
 
 const ChatBotPage = () => {
     return (
         <div className="max-w-md mx-auto my-10 shadow-md rounded-xl bg-[#C7EFF8]">
-            <div className='bg-gradient-to-r from-[#3054D9] to-[#50ADF2] p-5 mb-2 rounded-t-xl drop-shadow-lg'>
-                <h1 className="text-center text-white text-[32px] font-extrabold pb-1">Hi there! </h1>
+            <div className='bg-gradient-to-r from-[rgb(48,84,217)] to-[#50ADF2] p-5 mb-2 rounded-t-xl drop-shadow-lg flex flex-row gap-8 justify-center items-center'>
+                <div><Image src="/Vector.svg" width={60} height={60}/></div>
+                <div><h1 className="text-center text-white text-[32px] font-extrabold pb-1">Hi there!👋</h1></div>
+                
             </div>
 
             <div className="px-10 pt-2 pb-8">

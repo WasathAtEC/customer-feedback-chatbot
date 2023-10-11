@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from 'react'; 
+import axios from 'axios';
 
 
 const CustomerServiceForm = () => {
 
   const [fname, setFname] = useState('');
-  const [lname, setLname] = useState('');
   const [email, setEmail] = useState('');
   const [issue, setIssue] = useState('');
   const [subject, setSubject] = useState('');
@@ -19,27 +19,39 @@ const CustomerServiceForm = () => {
     setFile(selectFile);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
+    const formData = new FormData();
+    formData.append('fname', fname);
+    formData.append('email', email);
+    formData.append('issue', issue);
+    formData.append('subject', subject);
+    formData.append('details', details);
+    formData.append('file', file);
+  
+    try {
+      const response = await axios.post('/api/submit-form', formData);
+  
+      if (response.status === 200) {
+        alert('Form submitted successfully!');
+      } else {
+        alert('Form submission failed.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
+  
 
   const validateField = (name, value) => {
     const newErrors = { ...errors };
 
     if (name === 'fname') {
       if (!value.trim()) {
-        newErrors.fname = 'First Name is required';
+        newErrors.fname = 'Full Name is required';
       } else {
         delete newErrors.fname;
-      }
-    }
-
-    if (name === 'lname') {
-      if (!value.trim()) {
-        newErrors.lname = 'Last Name is required';
-      } else {
-        delete newErrors.lname;
       }
     }
 
@@ -73,7 +85,7 @@ const CustomerServiceForm = () => {
 
       <form onSubmit={handleSubmit} className='px-10 pt-2 pb-8'>
         <div className="mb-4">
-          <label htmlFor="fname" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">First Name</label>
+          <label htmlFor="fname" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Full Name</label>
           <input
             type="text"
             id="fname"
@@ -85,19 +97,7 @@ const CustomerServiceForm = () => {
           />
           {errors.fname && <p>{errors.fname} </p>}
         </div>
-        <div className="mb-4">
-          <label htmlFor="lname" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Last Name</label>
-          <input
-            type="text"
-            id="lname"
-            placeholder="Last name"
-            onChange={(e) => {setLname(e.target.value); validateField('lname', e.target.value);}}
-            value={lname}
-            className={`bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1 ${errors.lname ? 'border-red-500' : ''}`}
-            required
-          />
-          {errors.lname && <p>{errors.lname} </p>}
-        </div>
+        
         <div className="mb-4">
           <label htmlFor="email" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Email</label>
           <input
