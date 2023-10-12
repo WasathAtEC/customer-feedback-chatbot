@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ChatBotPage = () => {
+
     return (
         <div className="max-w-md mx-auto my-10 shadow-md rounded-xl bg-[#C7EFF8]">
             <div className='bg-gradient-to-r from-[rgb(48,84,217)] to-[#50ADF2] p-5 mb-2 rounded-t-xl drop-shadow-lg flex flex-row gap-8 justify-center items-center'>
@@ -31,9 +32,6 @@ const ChatBotPage = () => {
                     <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 05</div>
                 </div>
 
-                <div>
-                    
-                </div>
 
                 <div className="w-auto h-[98px] px-[21px] py-[9px] bg-gray-400 bg-opacity-50 rounded-[20px] shadow border border-stone-600 border-opacity-20 justify-center items-center gap-2.5 inline-flex my-4">
                     <p className="text-stone-950 text-opacity-70 text-[16px] font-semibold leading-[25px]">For complex issues,<br />please use our Support Form. <br /> We'll respond promptly.</p>

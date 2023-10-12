@@ -1,163 +1,163 @@
 "use client";
 
-import React, { useState } from 'react'; 
-import axios from 'axios';
-
+import React, { useState } from "react";
+import validateField from "../../../../src/helpers/validationHelperFunctions";
+import handleSubmit from "../../../../src/helpers/handleSubmit";
 
 const CustomerServiceForm = () => {
-
-  const [fname, setFname] = useState('');
-  const [email, setEmail] = useState('');
-  const [issue, setIssue] = useState('');
-  const [subject, setSubject] = useState('');
-  const [details, setDetails] = useState('');
+  const [fname, setFname] = useState("");
+  const [email, setEmail] = useState("");
+  const [issue, setIssue] = useState("");
+  const [subject, setSubject] = useState("");
+  const [details, setDetails] = useState("");
   const [file, setFile] = useState(null);
   const [errors, setErrors] = useState({});
-  
+
+  const formdata = { 
+    fname,
+    email,
+    subject,
+  };
+
   const handleFileChange = (e) => {
     const selectFile = e.target.files[0];
     setFile(selectFile);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    const formData = new FormData();
-    formData.append('fname', fname);
-    formData.append('email', email);
-    formData.append('issue', issue);
-    formData.append('subject', subject);
-    formData.append('details', details);
-    formData.append('file', file);
-  
-    try {
-      const response = await axios.post('/api/submit-form', formData);
-  
-      if (response.status === 200) {
-        alert('Form submitted successfully!');
-      } else {
-        alert('Form submission failed.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
-  
-
-  const validateField = (name, value) => {
-    const newErrors = { ...errors };
-
-    if (name === 'fname') {
-      if (!value.trim()) {
-        newErrors.fname = 'Full Name is required';
-      } else {
-        delete newErrors.fname;
-      }
-    }
-
-    if (name === 'email') {
-      if (!value.trim()) {
-        newErrors.email = 'Email is required';
-      } else if (!/^\S+@\S+\.\S+$/.test(value)) {
-        newErrors.email = 'Invalid email format';
-      } else {
-        delete newErrors.email;
-      }
-    }
-
-    if (name === 'subject') {
-      if (!value.trim()) {
-        newErrors.subject = 'Subject is required';
-      } else {
-        delete newErrors.subject;
-      }
-    }
-
-    setErrors(newErrors);
-  };
-
   return (
     <div className="max-w-md mx-auto my-10 shadow-md rounded-xl bg-[#C7EFF8]">
-      <div className='bg-gradient-to-r from-[#3054D9] to-[#50ADF2] p-5 mb-2 rounded-t-xl drop-shadow-lg'>
-        <h1 className="text-center text-white text-[32px] font-extrabold pb-1">Support Form</h1>
-        <p className='text-center text-neutral-300 text-[16px] font-semibold'>Need Assistance or Have Questions? <br />We're Here to Help!</p>
+      <div className="bg-gradient-to-r from-[#3054D9] to-[#50ADF2] p-5 mb-2 rounded-t-xl drop-shadow-lg">
+        <h1 className="text-center text-white text-[32px] font-extrabold pb-1">
+          Support Form
+        </h1>
+        <p className="text-center text-neutral-300 text-[16px] font-semibold">
+          Need Assistance or Have Questions? <br />
+          We're Here to Help!
+        </p>
       </div>
 
-      <form onSubmit={handleSubmit} className='px-10 pt-2 pb-8'>
+      <form onSubmit={handleSubmit} className="px-10 pt-2 pb-8">
         <div className="mb-4">
-          <label htmlFor="fname" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Full Name</label>
+          <label
+            htmlFor="fname"
+            className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
+          >
+            Full Name
+          </label>
           <input
             type="text"
             id="fname"
-            placeholder='First name'
-            onChange={(e) => {setFname(e.target.value); validateField('fname', e.target.value);}}
+            placeholder="First name"
+            onChange={(e) => {
+              setFname(e.target.value);
+              validateField("fname", e.target.value, errors);
+            }}
             value={fname}
-            className={`bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1 ${errors.fname ? 'border-red-500' : ''}`}
+            className={`bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1 ${
+              errors.fname ? "border-red-500" : ""
+            }`}
             required
           />
           {errors.fname && <p>{errors.fname} </p>}
         </div>
-        
+
         <div className="mb-4">
-          <label htmlFor="email" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Email</label>
+          <label
+            htmlFor="email"
+            className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
+          >
+            Email
+          </label>
           <input
             type="email"
             id="email"
-            placeholder='email'
-            onChange={(e) => {setEmail(e.target.value); validateField('email', e.target.value);}}
+            placeholder="Email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+              validateField("email", e.target.value, errors);
+            }}
             value={email}
-            className={`bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1 ${errors.email ? 'border-red-500' : ''}`}
+            className={`bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1 ${
+              errors.email ? "border-red-500" : ""
+            }`}
             required
           />
           {errors.email && <p>{errors.email} </p>}
         </div>
         <div className="mb-4">
-          <label htmlFor="issue" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">What's the issue?</label>
+          <label
+            htmlFor="issue"
+            className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
+          >
+            What's the issue?
+          </label>
           <select
             id="issue"
             onChange={(e) => setIssue(e.target.value)}
             value={issue}
-            className="bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1"
+            className="bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1"
             required
           >
-            <option value="" disabled>Select an issue</option>
+            <option value="" disabled>
+              Select an issue
+            </option>
             <option value="technical">Technical Issue</option>
             <option value="billing">Billing Inquiry</option>
             <option value="other">Other</option>
           </select>
         </div>
         <div className="mb-4">
-          <label htmlFor="subject" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Subject</label>
+          <label
+            htmlFor="subject"
+            className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
+          >
+            Subject
+          </label>
           <input
             type="text"
             id="subject"
-            placeholder='Subject'
-            onChange={(e) => {setSubject(e.target.value); validateField('subject', e.target.value);}}
+            placeholder="Subject"
+            onChange={(e) => {
+              setSubject(e.target.value);
+              validateField("subject", e.target.value, errors);
+            }}
             value={subject}
-            className={`bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1 ${errors.subject ? 'border-red-500' : ''}`}
+            className={`bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1 ${
+              errors.subject ? "border-red-500" : ""
+            }`}
             required
           />
           {errors.subject && <p>{errors.subject} </p>}
         </div>
         <div className="mb-3">
-          <label htmlFor="details" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">Additional Details</label>
+          <label
+            htmlFor="details"
+            className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
+          >
+            Additional Details
+          </label>
           <textarea
             id="details"
-            placeholder='Additional details'
+            placeholder="Additional details"
             onChange={(e) => setDetails(e.target.value)}
             value={details}
             rows="4"
-            className="bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1"
+            className="bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1"
           ></textarea>
         </div>
         <div className="mb-8">
-          <label htmlFor="file" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">File Upload</label>
+          <label
+            htmlFor="file"
+            className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
+          >
+            File Upload
+          </label>
           <input
             type="file"
             id="file"
             name="file"
             onChange={handleFileChange}
-            className="bg-slate-300 rounded-md border border-stone-600 border-opacity-20 w-full p-2 mt-1"
+            className="bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1"
           />
         </div>
         <div className="text-center">
