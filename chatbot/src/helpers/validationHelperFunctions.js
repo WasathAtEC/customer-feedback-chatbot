@@ -25,6 +25,8 @@ const validateField = (name, value, errors) => {
             delete errors.subject;
         }
     }
+
+    return errors;
 }
  
 export default validateField;
