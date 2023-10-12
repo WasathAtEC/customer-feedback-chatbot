@@ -67,7 +67,8 @@ const CustomerServiceForm = () => {
             placeholder="First name"
             onChange={(e) => {
               setFname(e.target.value);
-              validateField("fname", e.target.value, errors);
+              const newErrors = validateField("fname", e.target.value, errors);
+              setErrors(newErrors);
             }}
             value={fname}
             className={`bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1 ${
@@ -91,7 +92,8 @@ const CustomerServiceForm = () => {
             placeholder="Email"
             onChange={(e) => {
               setEmail(e.target.value);
-              validateField("email", e.target.value, errors);
+              const newErrors = validateField("email", e.target.value, errors);
+              setErrors(newErrors);
             }}
             value={email}
             className={`bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1 ${
@@ -136,7 +138,8 @@ const CustomerServiceForm = () => {
             placeholder="Subject"
             onChange={(e) => {
               setSubject(e.target.value);
-              validateField("subject", e.target.value, errors);
+              const newErrors = validateField("subject", e.target.value, errors);
+              setErrors(newErrors);
             }}
             value={subject}
             className={`bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1 ${

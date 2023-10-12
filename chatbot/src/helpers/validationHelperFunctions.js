@@ -1,32 +1,34 @@
 const validateField = (name, value, errors) => {
 
+    const newErrors = {...errors};
+
     if (name === 'fname') {
         if (!value.trim()) {
-            errors.fname = 'Full Name is required';
+            newErrors.fname = 'Full Name is required';
         } else {
-            delete errors.fname;
+            delete newErrors.fname;
         }
     }
 
     if (name === 'email') {
         if (!value.trim()) {
-            errors.email = 'Email is required';
+            newErrors.email = 'Email is required';
         } else if (!/^\S+@\S+\.\S+$/.test(value)) {
-            errors.email = 'Invalid email format';
+            newErrors.email = 'Invalid email format';
         } else {
-            delete errors.email;
+            delete newErrors.email;
         }
     }
 
     if (name === 'subject') {
         if (!value.trim()) {
-            errors.subject = 'Subject is required';
+            newErrors.subject = 'Subject is required';
         } else {
-            delete errors.subject;
+            delete newErrors.subject;
         }
     }
 
-    return errors;
+    return newErrors;
 }
  
 export default validateField;

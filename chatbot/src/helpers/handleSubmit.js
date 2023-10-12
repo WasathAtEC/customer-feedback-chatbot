@@ -1,6 +1,5 @@
 import axios from "axios";
 const handleSubmit = async (formData) => {
-    e.preventDefault();
 
     try {
       const response = await axios.post("http://localhost:8000/api/v1/feedback/create-feedback/", formData);
