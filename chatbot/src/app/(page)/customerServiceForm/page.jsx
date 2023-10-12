@@ -5,11 +5,11 @@ import validateField from "../../../../src/helpers/validationHelperFunctions";
 import handleSubmit from "../../../../src/helpers/handleSubmit";
 
 const CustomerServiceForm = () => {
-  const [fname, setFname] = useState("");
+  const [name, setname] = useState("");
   const [email, setEmail] = useState("");
-  const [issue, setIssue] = useState("");
+  const [issueCategory, setissueCategory] = useState("");
   const [subject, setSubject] = useState("");
-  const [details, setDetails] = useState("");
+  const [message, setmessage] = useState("");
   const [file, setFile] = useState(null);
   const [errors, setErrors] = useState({});
 
@@ -18,11 +18,11 @@ const CustomerServiceForm = () => {
     setFile(selectFile);
   };
 
-  const onSubmit = (e) => {
+  const onSubmit =  async (e) => {
     e.preventDefault();
 
     const newErrors = validateField({
-      fname,
+      name,
       email,
       subject,
     });
@@ -30,14 +30,22 @@ const CustomerServiceForm = () => {
     setErrors(newErrors);
 
     if(Object.keys(newErrors).length === 0) {
-      handleSubmit({
-        fname,
-        email,
-        issue,
-        subject,
-        details,
-        file,
-      });
+      const formData = new FormData();
+      formData.append('company', 'Company1');
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("issueCategory", issueCategory);
+      formData.append("subject", subject);
+      formData.append("message", message);
+      formData.append("file", file);
+
+      const submissionResult = await handleSubmit(formData);
+
+      if (submissionResult === "Form submitted successfully!") {
+        alert("Form submitted successfully!");
+      } else {
+        alert("Form submission failed.");
+      }
     }
   };
 
@@ -53,30 +61,30 @@ const CustomerServiceForm = () => {
         </p>
       </div>
 
-      <form onSubmit={onSubmit} className="px-10 pt-2 pb-8">
+      <form onSubmit={onSubmit} className="px-10 pt-2 pb-8" enctype="multipart/form-data">
         <div className="mb-4">
           <label
-            htmlFor="fname" 
+            htmlFor="name" 
             className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
           >
             Full Name
           </label>
           <input
             type="text"
-            id="fname"
+            id="name"
             placeholder="First name"
             onChange={(e) => {
-              setFname(e.target.value);
-              const newErrors = validateField("fname", e.target.value, errors);
+              setname(e.target.value);
+              const newErrors = validateField("name", e.target.value, errors);
               setErrors(newErrors);
             }}
-            value={fname}
+            value={name}
             className={`bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1 ${
-              errors.fname ? "border-red-500" : ""
+              errors.name ? "border-red-500" : ""
             }`}
             required
           />
-          {errors.fname && <p className="text-red-600 text-sm">{errors.fname} </p>}
+          {errors.name && <p className="text-red-600 text-sm">{errors.name} </p>}
         </div>
 
         <div className="mb-4">
@@ -105,24 +113,24 @@ const CustomerServiceForm = () => {
         </div>
         <div className="mb-4">
           <label
-            htmlFor="issue"
+            htmlFor="issueCategory"
             className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
           >
-            What's the issue?
+            What's the issueCategory?
           </label>
           <select
-            id="issue"
-            onChange={(e) => setIssue(e.target.value)}
-            value={issue}
+            id="issueCategory"
+            onChange={(e) => setissueCategory(e.target.value)}
+            value={issueCategory}
             className="bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1"
             required
           >
             <option value="" disabled>
-              Select an issue
+              Select an issueCategory
             </option>
-            <option value="technical">Technical Issue</option>
-            <option value="billing">Billing Inquiry</option>
-            <option value="other">Other</option>
+            <option value="Issue 1">Technical issueCategory</option>
+            <option value="Issue 2">Billing Inquiry</option>
+            <option value="Issue 3">Other</option>
           </select>
         </div>
         <div className="mb-4">
@@ -151,16 +159,16 @@ const CustomerServiceForm = () => {
         </div>
         <div className="mb-3">
           <label
-            htmlFor="details"
+            htmlFor="message"
             className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
           >
-            Additional Details
+            Additional message
           </label>
           <textarea
-            id="details"
-            placeholder="Additional details"
-            onChange={(e) => setDetails(e.target.value)}
-            value={details}
+            id="message"
+            placeholder="Additional message"
+            onChange={(e) => setmessage(e.target.value)}
+            value={message}
             rows="4"
             className="bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1"
           ></textarea>

@@ -1,16 +1,22 @@
 import axios from "axios";
 const handleSubmit = async (formData) => {
 
-    try {
-      const response = await axios.post("http://localhost:8000/api/v1/feedback/create-feedback/", formData);
+  console.log(formData);
 
-      if (response.status === 200) {
-        alert("Form submitted successfully!");
+    try {
+      
+      const response = await axios.post("http://localhost:8000/api/v1/feedback/create-feedback", formData, {headers: {'Content-Type': 'application/json',},
+});
+
+      console.log(response.data);
+
+      if (response.status === 201) {
+        return "Form submitted successfully!";
       } else {
-        alert("Form submission failed.");
+        return "Form submission failed.";
       }
     } catch (error) {
-      console.error("Error:", error);
+      return "Error: " + error;
     }
   };
 

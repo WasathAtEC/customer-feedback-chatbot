@@ -2,11 +2,11 @@ const validateField = (name, value, errors) => {
 
     const newErrors = {...errors};
 
-    if (name === 'fname') {
+    if (name === 'name') {
         if (!value.trim()) {
-            newErrors.fname = 'Full Name is required';
+            newErrors.name = 'Full Name is required';
         } else {
-            delete newErrors.fname;
+            delete newErrors.name;
         }
     }
 
