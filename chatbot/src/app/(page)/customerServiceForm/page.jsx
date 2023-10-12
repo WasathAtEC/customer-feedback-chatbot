@@ -56,7 +56,7 @@ const CustomerServiceForm = () => {
       <form onSubmit={onSubmit} className="px-10 pt-2 pb-8">
         <div className="mb-4">
           <label
-            htmlFor="fname"
+            htmlFor="fname" 
             className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
           >
             Full Name
@@ -75,7 +75,7 @@ const CustomerServiceForm = () => {
             }`}
             required
           />
-          {errors.fname && <p>{errors.fname} </p>}
+          {errors.fname && <p className="text-red-600 text-sm">{errors.fname} </p>}
         </div>
 
         <div className="mb-4">
@@ -99,7 +99,7 @@ const CustomerServiceForm = () => {
             }`}
             required
           />
-          {errors.email && <p>{errors.email} </p>}
+          {errors.email && <p className="text-red-600 text-sm">{errors.email} </p>}
         </div>
         <div className="mb-4">
           <label
@@ -144,7 +144,7 @@ const CustomerServiceForm = () => {
             }`}
             required
           />
-          {errors.subject && <p>{errors.subject} </p>}
+          {errors.subject && <p className="text-red-600 text-sm">{errors.subject} </p>}
         </div>
         <div className="mb-3">
           <label
