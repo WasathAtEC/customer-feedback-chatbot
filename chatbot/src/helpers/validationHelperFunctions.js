@@ -1,5 +1,5 @@
-const validateField = (formdata) => {
-    const errors = {};
+const validateField = (name, value, errors) => {
+    const newErrors = {...errors};
 
     if (name === 'fname') {
         if (!value.trim()) {
@@ -27,7 +27,7 @@ const validateField = (formdata) => {
         }
     }
 
-    setErrors(newErrors);
+    return newErrors;
 }
  
 export default validateField;

@@ -13,15 +13,32 @@ const CustomerServiceForm = () => {
   const [file, setFile] = useState(null);
   const [errors, setErrors] = useState({});
 
-  const formdata = { 
-    fname,
-    email,
-    subject,
-  };
-
   const handleFileChange = (e) => {
     const selectFile = e.target.files[0];
     setFile(selectFile);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const newErrors = validateField({
+      fname,
+      email,
+      subject,
+    });
+
+    setErrors(newErrors);
+
+    if(Object.keys(newErrors).length === 0) {
+      handleSubmit({
+        fname,
+        email,
+        issue,
+        subject,
+        details,
+        file,
+      });
+    }
   };
 
   return (
