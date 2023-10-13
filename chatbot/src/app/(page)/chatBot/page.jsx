@@ -2,6 +2,7 @@
 
 import Image from "next/image"; 
 import Link from "next/link";
+import CollapsibleIssue from "@/components/CollapsibleIssue/page";
 
 const ChatBotPage = () => {
 
@@ -26,12 +27,19 @@ const ChatBotPage = () => {
                     <p className="text-stone-950 text-opacity-70 text-[16px] font-semibold leading-[28px]">Please choose one of the topics. <br />What would you like to explore?</p>
                 </div>
 
-                <div className="w-auto h-auto gap-[18px] flex flex-wrap px-2 my-3">
+                {/* <div className="w-auto h-auto gap-[18px] flex flex-wrap px-2 my-3">
                     <div className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 01</div>
                     <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 02</div>
                     <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 03</div>
                     <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 04</div>
                     <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 05</div>
+                </div> */}
+                <div className="w-auto h-auto gap-[18px] flex flex-wrap px-2 my-3">
+                    <CollapsibleIssue issue="Issue 01" />
+                    <CollapsibleIssue issue="Issue 02" />
+                    <CollapsibleIssue issue="Issue 03" />
+                    <CollapsibleIssue issue="Issue 04" />
+                    <CollapsibleIssue issue="Issue 05" />
                 </div>
 
 
