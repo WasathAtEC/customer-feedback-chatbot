@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const CollapsibleIssue = ({ issue }) => {
+const CollapsibleIssue = ({ issue, details }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDetails = () => {
@@ -17,8 +17,7 @@ const CollapsibleIssue = ({ issue }) => {
       </button>
       {isOpen && (
         <div className="ml-4 text-gray-600">
-          <p>test details</p>
-          {/* Insert issue details here */}
+          {details}
         </div>
       )}
     </div>

@@ -35,11 +35,11 @@ const ChatBotPage = () => {
                     <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 05</div>
                 </div> */}
                 <div className="w-auto h-auto gap-[18px] flex flex-wrap px-2 my-3">
-                    <CollapsibleIssue issue="Issue 01" />
-                    <CollapsibleIssue issue="Issue 02" />
-                    <CollapsibleIssue issue="Issue 03" />
-                    <CollapsibleIssue issue="Issue 04" />
-                    <CollapsibleIssue issue="Issue 05" />
+                    <CollapsibleIssue issue="Issue 01" details="hello world" />
+                    <CollapsibleIssue issue="Issue 02" details="hello world 02"/>
+                    <CollapsibleIssue issue="Issue 03" details="hello world 03"/>
+                    <CollapsibleIssue issue="Issue 04" details="hello world 04"/>
+                    <CollapsibleIssue issue="Issue 05" details="hello world 05"/>
                 </div>
 
 
