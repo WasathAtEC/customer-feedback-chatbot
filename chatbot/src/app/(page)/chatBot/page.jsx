@@ -16,6 +16,34 @@ const ChatBotPage = () => {
     }
   };
 
+  const issues = [
+    {
+      issue: "Issue 01",
+      details: "Details for Issue 01",
+    },
+    {
+      issue: "Issue 02",
+      details: "Details for Issue 02",
+    },
+    {
+      issue: "Issue 03",
+      details: "Details for Issue 03",
+    },
+    {
+      issue: "Issue 04",
+      details: "Details for Issue 5",
+    },
+    {
+      issue: "Issue 05",
+      details: "Details for Issue 02",
+    },
+    {
+      issue: "Issue 06",
+      details: "Details for Issue 02",
+    },
+    // Add more issues and details as needed
+  ];
+
   return (
     <div className="max-w-md mx-auto my-10 shadow-md rounded-xl bg-[#C7EFF8]">
       <div className="bg-gradient-to-r from-[rgb(48,84,217)] to-[#50ADF2] p-5 mb-2 rounded-t-xl drop-shadow-lg flex flex-row gap-8 justify-center items-center">
@@ -56,38 +84,25 @@ const ChatBotPage = () => {
                     <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 04</div>
                     <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 05</div>
                 </div> */}
+
         <div className="w-auto h-auto gap-[18px] flex flex-wrap px-2 my-3">
-          <CollapsibleIssue
-            issue="Issue 01"
-            details="hello world"
-            isOpen={openIssue === "Issue 01"}
-            onClick={() => toggleIssue("Issue 01")}
-          />
-          <CollapsibleIssue
-            issue="Issue 02"
-            details="hello world 02"
-            isOpen={openIssue === "Issue 02"}
-            onClick={() => toggleIssue("Issue 02")}
-          />
-          <CollapsibleIssue
-            issue="Issue 03"
-            details="hello world 03"
-            isOpen={openIssue === "Issue 03"}
-            onClick={() => toggleIssue("Issue 03")}
-          />
-          <CollapsibleIssue
-            issue="Issue 04"
-            details="hello world 04"
-            isOpen={openIssue === "Issue 04"}
-            onClick={() => toggleIssue("Issue 04")}
-          />
-          <CollapsibleIssue
-            issue="Issue 05"
-            details="hello world 05"
-            isOpen={openIssue === "Issue 05"}
-            onClick={() => toggleIssue("Issue 05")}
-          />
+          {issues.map((issueData, index) => (
+            <CollapsibleIssue
+              key={index}
+              issue={issueData.issue}
+              details={issueData.details}
+              isOpen={openIssue === issueData.issue}
+              onClick={() => toggleIssue(issueData.issue)}
+            />
+          ))}
         </div>
+
+        {/* Details section */}
+        {openIssue && (
+          <div className="w-full p-4 text-stone-950 text-opacity-70 text-[16px] font-semibold">
+            {issues.find((issueData) => issueData.issue === openIssue).details}
+          </div>
+        )}
 
         <div className="w-auto h-[98px] px-[21px] py-[9px] bg-gray-400 bg-opacity-50 rounded-[20px] shadow border border-stone-600 border-opacity-20 justify-center items-center gap-2.5 inline-flex my-4">
           <p className="text-stone-950 text-opacity-70 text-[16px] font-semibold leading-[25px]">

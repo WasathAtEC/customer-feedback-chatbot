@@ -9,7 +9,6 @@ const CollapsibleIssue = ({ issue, details, isOpen, onClick }) => {
       >
         {issue}
       </button>
-      {isOpen && <div className="ml-4 text-gray-600">{details}</div>}
     </div>
   );
 };
