@@ -18,7 +18,7 @@ const CustomerServiceForm = () => {
     setFile(selectFile);
   };
 
-  const onSubmit =  async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     const newErrors = validateField({
@@ -29,9 +29,9 @@ const CustomerServiceForm = () => {
 
     setErrors(newErrors);
 
-    if(Object.keys(newErrors).length === 0) {
+    if (Object.keys(newErrors).length === 0) {
       const formData = new FormData();
-      formData.append('company', 'Company1');
+      formData.append("company", "Company1");
       formData.append("name", name);
       formData.append("email", email);
       formData.append("issueCategory", issueCategory);
@@ -61,10 +61,14 @@ const CustomerServiceForm = () => {
         </p>
       </div>
 
-      <form onSubmit={onSubmit} className="px-10 pt-2 pb-8" enctype="multipart/form-data">
+      <form
+        onSubmit={onSubmit}
+        className="px-10 pt-2 pb-8"
+        enctype="multipart/form-data"
+      >
         <div className="mb-4">
           <label
-            htmlFor="name" 
+            htmlFor="name"
             className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
           >
             Full Name
@@ -84,7 +88,9 @@ const CustomerServiceForm = () => {
             }`}
             required
           />
-          {errors.name && <p className="text-red-600 text-sm">{errors.name} </p>}
+          {errors.name && (
+            <p className="text-red-600 text-sm">{errors.name} </p>
+          )}
         </div>
 
         <div className="mb-4">
@@ -109,7 +115,9 @@ const CustomerServiceForm = () => {
             }`}
             required
           />
-          {errors.email && <p className="text-red-600 text-sm">{errors.email} </p>}
+          {errors.email && (
+            <p className="text-red-600 text-sm">{errors.email} </p>
+          )}
         </div>
         <div className="mb-4">
           <label
@@ -146,7 +154,11 @@ const CustomerServiceForm = () => {
             placeholder="Subject"
             onChange={(e) => {
               setSubject(e.target.value);
-              const newErrors = validateField("subject", e.target.value, errors);
+              const newErrors = validateField(
+                "subject",
+                e.target.value,
+                errors
+              );
               setErrors(newErrors);
             }}
             value={subject}
@@ -155,7 +167,9 @@ const CustomerServiceForm = () => {
             }`}
             required
           />
-          {errors.subject && <p className="text-red-600 text-sm">{errors.subject} </p>}
+          {errors.subject && (
+            <p className="text-red-600 text-sm">{errors.subject} </p>
+          )}
         </div>
         <div className="mb-3">
           <label
