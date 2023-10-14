@@ -3,15 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import CollapsibleIssue from "@/components/CollapsibleIssue/page";
-import {useState } from "react";
+import { useState } from "react";
 
 const ChatBotPage = () => {
-  const [openIssue, setOpenIssue] = useState(null);
   const [open, setOpen] = useState(false);
 
   const toggle = (index) => {
     if (open === index) {
-      setOpen(null); 
+      setOpen(null);
     } else {
       setOpen(index);
     }
@@ -30,8 +29,6 @@ const ChatBotPage = () => {
       issue: "Issue 03",
       details: "Details for Issue 03",
     },
-    
-    // Add more issues and details as needed
   ];
 
   return (
@@ -76,11 +73,17 @@ const ChatBotPage = () => {
                 </div> */}
 
         <div className="w-auto h-auto gap-[18px] flex flex-wrap px-2 my-3">
-          <div>
-            {issues.map((data, index) => {
-              return <CollapsibleIssue key={index} open={index === open} issue={data.issue} details={data.details} toggle={() => toggle(index)}/>;
-            })}
-          </div>
+          {issues.map((data, index) => {
+            return (
+              <CollapsibleIssue
+                key={index}
+                open={index === open}
+                issue={data.issue}
+                details={data.details}
+                toggle={() => toggle(index)}
+              />
+            );
+          })}
         </div>
 
         <div className="w-auto h-[98px] px-[21px] py-[9px] bg-gray-400 bg-opacity-50 rounded-[20px] shadow border border-stone-600 border-opacity-20 justify-center items-center gap-2.5 inline-flex my-4">
