@@ -3,44 +3,34 @@
 import Image from "next/image";
 import Link from "next/link";
 import CollapsibleIssue from "@/components/CollapsibleIssue/page";
-import { useState } from "react";
+import {useState } from "react";
 
 const ChatBotPage = () => {
   const [openIssue, setOpenIssue] = useState(null);
+  const [open, setOpen] = useState(false);
 
-  const toggleIssue = (issue) => {
-    if (openIssue === issue) {
-      setOpenIssue(null); // Close the currently open issue
+  const toggle = (index) => {
+    if (open === index) {
+      setOpen(null); 
     } else {
-      setOpenIssue(issue); // Open the clicked issue
+      setOpen(index);
     }
   };
 
   const issues = [
     {
-      issue: "Issue 01",
+      issue: "How to Register/Create a profile",
       details: "Details for Issue 01",
     },
     {
-      issue: "Issue 02",
+      issue: "How to Login/Sign In to your profile",
       details: "Details for Issue 02",
     },
     {
       issue: "Issue 03",
       details: "Details for Issue 03",
     },
-    {
-      issue: "Issue 04",
-      details: "Details for Issue 5",
-    },
-    {
-      issue: "Issue 05",
-      details: "Details for Issue 02",
-    },
-    {
-      issue: "Issue 06",
-      details: "Details for Issue 02",
-    },
+    
     // Add more issues and details as needed
   ];
 
@@ -86,23 +76,12 @@ const ChatBotPage = () => {
                 </div> */}
 
         <div className="w-auto h-auto gap-[18px] flex flex-wrap px-2 my-3">
-          {issues.map((issueData, index) => (
-            <CollapsibleIssue
-              key={index}
-              issue={issueData.issue}
-              details={issueData.details}
-              isOpen={openIssue === issueData.issue}
-              onClick={() => toggleIssue(issueData.issue)}
-            />
-          ))}
-        </div>
-
-        {/* Details section */}
-        {openIssue && (
-          <div className="w-full p-4 text-stone-950 text-opacity-70 text-[16px] font-semibold">
-            {issues.find((issueData) => issueData.issue === openIssue).details}
+          <div>
+            {issues.map((data, index) => {
+              return <CollapsibleIssue key={index} open={index === open} issue={data.issue} details={data.details} toggle={() => toggle(index)}/>;
+            })}
           </div>
-        )}
+        </div>
 
         <div className="w-auto h-[98px] px-[21px] py-[9px] bg-gray-400 bg-opacity-50 rounded-[20px] shadow border border-stone-600 border-opacity-20 justify-center items-center gap-2.5 inline-flex my-4">
           <p className="text-stone-950 text-opacity-70 text-[16px] font-semibold leading-[25px]">
