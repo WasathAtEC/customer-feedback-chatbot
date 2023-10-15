@@ -19,15 +19,42 @@ const ChatBotPage = () => {
   const issues = [
     {
       issue: "How to Register/Create a profile",
-      details: "Details for Issue 01",
+      details: (
+        <div>
+          <p>Details for Issue 01</p>
+          <img src="/path/to/your-image.jpg" alt="Image Alt Text" />
+          <p>
+            For more information, please visit our{" "}
+            <a href="https://www.example.com">website</a>.
+          </p>
+        </div>
+      ),
     },
     {
       issue: "How to Login/Sign In to your profile",
-      details: "Details for Issue 02",
+      details: (
+        <div>
+          <p>Details for Issue 01</p>
+          <img src="/path/to/your-image.jpg" alt="Image Alt Text" />
+          <p>
+            For more information, please visit our{" "}
+            <a href="https://www.example.com">website</a>.
+          </p>
+        </div>
+      ),
     },
     {
-      issue: "Issue 03",
-      details: "Details for Issue 03",
+      issue: "How to get started with eCoO",
+      details: (
+        <div>
+          <p>Details for Issue 01</p>
+          <img src="/path/to/your-image.jpg" alt="Image Alt Text" />
+          <p>
+            For more information, please visit our{" "}
+            <a href="https://www.example.com">website</a>.
+          </p>
+        </div>
+      ),
     },
   ];
 
@@ -63,14 +90,6 @@ const ChatBotPage = () => {
             What would you like to explore?
           </p>
         </div>
-
-        {/* <div className="w-auto h-auto gap-[18px] flex flex-wrap px-2 my-3">
-                    <div className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 01</div>
-                    <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 02</div>
-                    <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 03</div>
-                    <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 04</div>
-                    <div  className="outline-dashed outline-2 outline-offset-0 rounded-lg bg-[#9ACAF6] opacity-58 text-blue-600 text-opacity-90 text-md font-semibold font-['Inter'] leading-[25px] px-4 py-1 mb-2 mx-1">issue 05</div>
-                </div> */}
 
         <div className="w-auto h-auto gap-[18px] flex flex-wrap px-2 my-3">
           {issues.map((data, index) => {
