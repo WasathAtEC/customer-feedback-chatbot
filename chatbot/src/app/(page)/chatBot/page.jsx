@@ -21,11 +21,20 @@ const ChatBotPage = () => {
       issue: "How to Register/Create a profile",
       details: (
         <div>
-          <p>Details for Issue 01</p>
-          <img src="/path/to/your-image.jpg" alt="Image Alt Text" />
+          <p className="pb-2">Company Registration : Tutorial for existing exporters with DoC</p>
+          <a href="https://www.youtube.com/watch?v=vrMAwJkKHaE&list=PLw-SKwgtg9pVjxeGM59-Q9sfq32lVHkJ8&index=2">
+          <Image
+            src="/youtubeImg.png"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "auto", height: "auto"}} 
+          />
+          </a>
+          
           <p>
-            For more information, please visit our{" "}
-            <a href="https://www.example.com">website</a>.
+            For more information, please visit our 
+            <a href="https://www.example.com" className="text-purple-800 "> Department of Commerce Sri Lanka youtube channel</a>.
           </p>
         </div>
       ),
@@ -35,7 +44,13 @@ const ChatBotPage = () => {
       details: (
         <div>
           <p>Details for Issue 01</p>
-          <img src="/path/to/your-image.jpg" alt="Image Alt Text" />
+          <Image
+            src="/youtubeImg.png"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "auto", height: "auto" }}
+          />
           <p>
             For more information, please visit our{" "}
             <a href="https://www.example.com">website</a>.
@@ -48,10 +63,19 @@ const ChatBotPage = () => {
       details: (
         <div>
           <p>Details for Issue 01</p>
-          <img src="/path/to/your-image.jpg" alt="Image Alt Text" />
+          <Image
+            src="/youtubeImg.png"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "auto", height: "auto" }}
+          />
           <p>
             For more information, please visit our{" "}
-            <a href="https://www.example.com">website</a>.
+            <a href="https://www.youtube.com/watch?v=vrMAwJkKHaE&list=PLw-SKwgtg9pVjxeGM59-Q9sfq32lVHkJ8&index=2">
+              web
+            </a>
+            .
           </p>
         </div>
       ),

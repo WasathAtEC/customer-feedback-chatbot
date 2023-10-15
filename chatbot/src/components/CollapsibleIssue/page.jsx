@@ -13,7 +13,7 @@ const CollapsibleIssue = ({ open, toggle, issue, details }) => {
       </div>
 
       <Collapse isOpened={open}>
-        <div className="bg-[#EEF9FC] mt-3 mx-2 px-3 py-2 rounded-lg shadow">{details}</div>
+        <div className="bg-[#cedadd] mt-3 mx-2 px-3 py-2 rounded-lg shadow border border-stone-600 border-opacity-20">{details}</div>
       </Collapse>
     </div>
   );
