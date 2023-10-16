@@ -6,6 +6,7 @@ import handleSubmit from "../../../../src/helpers/handleSubmit";
 import uploadFileAndGetUrl from "../../../../src/helpers/fileUpload";
 import { useRouter } from 'next/navigation'
 
+
 const CustomerServiceForm = () => {
   const router = useRouter()
   const [name, setname] = useState("");
@@ -16,6 +17,9 @@ const CustomerServiceForm = () => {
   const [file, setFile] = useState(null);
   const [errors, setErrors] = useState({});
   const [uploadUrl, setUploadUrl] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
+
+
 
   const handleFileChange = (e) => {
     const selectFile = e.target.files[0];
@@ -24,6 +28,8 @@ const CustomerServiceForm = () => {
 
   const handleConfirmUpload = async () => {
     if (file) {
+      setIsUploading(true);
+
       try {
         const uploadUrl = await uploadFileAndGetUrl(file);
         setUploadUrl(uploadUrl);
@@ -36,6 +42,8 @@ const CustomerServiceForm = () => {
       } catch (error) {
         console.error("Error during file upload:", error);
         alert("File upload failed.");
+      }finally {
+        setIsUploading(false);
       }
     }
   };
@@ -241,8 +249,9 @@ const CustomerServiceForm = () => {
             onClick={handleConfirmUpload}
             className="w-[120px] h-7 bg-green-600 rounded-md border border-stone-600 border-opacity-20 text-white text-sm font-semibold px-2 hover:bg-green-500 hover:text-white mt-1 mb-6"
           >
-            Upload
+            {isUploading ? "Uploading..." : "Upload"}
           </button>
+          {isUploading && <p>Uploading your file, please wait...</p>}
         </div>
         
         <div className="text-center">
