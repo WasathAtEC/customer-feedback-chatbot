@@ -29,6 +29,7 @@ const ChatBotPage = () => {
             height={0}
             sizes="100vw"
             style={{ width: "auto", height: "auto"}} 
+            alt="tutorial for Company registration"
           />
           </a>
           
@@ -50,6 +51,7 @@ const ChatBotPage = () => {
             height={0}
             sizes="100vw"
             style={{ width: "auto", height: "auto" }}
+            alt="Tutorial for login/sign in"
           />
           <p>
             For more information, please visit our{" "}
@@ -69,6 +71,7 @@ const ChatBotPage = () => {
             height={0}
             sizes="100vw"
             style={{ width: "auto", height: "auto" }}
+            alt="Tutorials for get started with eCoO"
           />
           <p>
             For more information, please visit our{" "}
@@ -86,7 +89,7 @@ const ChatBotPage = () => {
     <div className="max-w-md mx-auto my-10 shadow-md rounded-xl bg-[#C7EFF8]">
       <div className="bg-gradient-to-r from-[rgb(48,84,217)] to-[#50ADF2] p-5 mb-2 rounded-t-xl drop-shadow-lg flex flex-row gap-8 justify-center items-center">
         <div>
-          <Image src="/Vector.svg" width={60} height={60} />
+          <Image src="/Vector.svg" width={60} height={60} alt="chat bot"/>
         </div>
         <div>
           <h1 className="text-center text-white text-[32px] font-extrabold pb-1">
