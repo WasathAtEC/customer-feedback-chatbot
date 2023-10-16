@@ -2,6 +2,7 @@ import axios from "axios";
 
 const handleSubmit = async (formData) => {
   try {
+    //send form data with file url(blobName)
     const response = await axios.post(
       "http://ec-api.czduhsdfatdud7bz.eastus.azurecontainer.io/api/v1/feedback/create-feedback",
       formData,

@@ -4,11 +4,10 @@ import React, { useState } from "react";
 import validateField from "../../../../src/helpers/validationHelperFunctions";
 import handleSubmit from "../../../../src/helpers/handleSubmit";
 import uploadFileAndGetUrl from "../../../../src/helpers/fileUpload";
-import { useRouter } from 'next/navigation'
-
+import { useRouter } from "next/navigation";
 
 const CustomerServiceForm = () => {
-  const router = useRouter()
+  const router = useRouter();
   const [name, setname] = useState("");
   const [email, setEmail] = useState("");
   const [issueCategory, setissueCategory] = useState("");
@@ -22,12 +21,12 @@ const CustomerServiceForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("Submit");
 
-
   const handleFileChange = (e) => {
     const selectFile = e.target.files[0];
     setFile(selectFile);
   };
 
+  //confirm file uploading and loading and get the url
   const handleConfirmUpload = async () => {
     if (file) {
       setIsUploading(true);
@@ -43,8 +42,7 @@ const CustomerServiceForm = () => {
         }
       } catch (error) {
         console.error("Error during file upload:", error);
-        alert("File upload failed.");
-      }finally {
+      } finally {
         setIsUploading(false);
       }
     }
@@ -62,6 +60,7 @@ const CustomerServiceForm = () => {
 
     setErrors(newErrors);
 
+    //form submitting loading and submit
     if (Object.keys(newErrors).length === 0) {
       setIsSubmitting(true);
 
@@ -80,11 +79,11 @@ const CustomerServiceForm = () => {
         setSubmitStatus("Submitted");
 
         setTimeout(() => {
-          router.push('/');
+          router.push("/");
         }, 2000);
       } else {
         setSubmitStatus("Submit again");
-      } 
+      }
       setIsSubmitting(false);
     }
   };
@@ -261,7 +260,7 @@ const CustomerServiceForm = () => {
           </button>
           {isUploading && <p>Uploading your file, please wait...</p>}
         </div>
-        
+
         <div className="text-center">
           <button
             type="submit"
