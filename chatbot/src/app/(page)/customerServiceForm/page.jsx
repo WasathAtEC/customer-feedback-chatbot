@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import validateField from "../../../../src/helpers/validationHelperFunctions";
 import handleSubmit from "../../../../src/helpers/handleSubmit";
+import uploadFileAndGetUrl from "../../../../src/helpers/fileUpload";
 
 const CustomerServiceForm = () => {
   const [name, setname] = useState("");
@@ -12,10 +13,31 @@ const CustomerServiceForm = () => {
   const [message, setmessage] = useState("");
   const [file, setFile] = useState(null);
   const [errors, setErrors] = useState({});
+  const [uploadUrl, setUploadUrl] = useState(null);
 
   const handleFileChange = (e) => {
     const selectFile = e.target.files[0];
     setFile(selectFile);
+  };
+
+  const handleConfirmUpload = async () => {
+    if (file) {
+      try {
+        // Use the uploadFileAndGetUrl function to get the URL
+        const uploadUrl = await uploadFileAndGetUrl(file);
+        setUploadUrl(uploadUrl);
+
+        if (uploadUrl) {
+          // If a URL is obtained, you can display it or use it as needed
+          alert("File uploaded successfully. URL: " + uploadUrl);
+        } else {
+          alert("File upload failed.");
+        }
+      } catch (error) {
+        console.error("Error during file upload:", error);
+        alert("File upload failed.");
+      }
+    }
   };
 
   const onSubmit = async (e) => {
@@ -37,7 +59,7 @@ const CustomerServiceForm = () => {
       formData.append("issueCategory", issueCategory);
       formData.append("subject", subject);
       formData.append("message", message);
-      formData.append("file", file);
+      formData.append("file", uploadUrl);
 
       const submissionResult = await handleSubmit(formData);
 
@@ -201,6 +223,13 @@ const CustomerServiceForm = () => {
             onChange={handleFileChange}
             className="bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1"
           />
+          <button
+    type="button"
+    onClick={handleConfirmUpload}
+    className="w-[134px] h-11 bg-gradient-to-r from-blue-700 to-blue-400 rounded-md border border-stone-600 border-opacity-20 text-white text-lg font-semibold px-4 py-2 hover:from-blue-800 hover:to-blue-500 hover:text-blue-200 mt-2"
+  >
+    Confirm Upload
+  </button>
         </div>
         <div className="text-center">
           <button
