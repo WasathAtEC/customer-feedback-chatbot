@@ -8,7 +8,7 @@ const uploadFileAndGetUrl = async (file) => {
 
     // Send the file to get the URL
     const response = await axios.post(
-      "http://localhost:8000/api/v1/file-service/upload-file",
+      "http://ec-api.czduhsdfatdud7bz.eastus.azurecontainer.io/api/v1/file-service/upload-file",
       formData,
       {
         headers: {
