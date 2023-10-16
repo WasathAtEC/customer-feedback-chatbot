@@ -35,7 +35,7 @@ const ChatBotPage = () => {
           
           <p>
             For more information, please visit our 
-            <a href="https://www.example.com" className="text-purple-800 "> Department of Commerce Sri Lanka youtube channel</a>.
+            <a href="https://www.youtube.com/@departmentofcommercesrilan8118" className="text-purple-800 "> Department of Commerce Sri Lanka youtube channel</a>.
           </p>
         </div>
       ),
@@ -44,7 +44,7 @@ const ChatBotPage = () => {
       issue: "How to Login/Sign In to your profile",
       details: (
         <div>
-          <p>Details for Issue 01</p>
+          <p>Details for Issue 02</p>
           <Image
             src="/youtubeImg.png"
             width={0}
@@ -54,8 +54,8 @@ const ChatBotPage = () => {
             alt="Tutorial for login/sign in"
           />
           <p>
-            For more information, please visit our{" "}
-            <a href="https://www.example.com">website</a>.
+            For more information, please visit our 
+            <a href="https://www.youtube.com/@departmentofcommercesrilan8118" className="text-purple-800 "> Department of Commerce Sri Lanka youtube channel</a>.
           </p>
         </div>
       ),
@@ -64,7 +64,7 @@ const ChatBotPage = () => {
       issue: "How to get started with eCoO",
       details: (
         <div>
-          <p>Details for Issue 01</p>
+          <p>Details for Issue 03</p>
           <Image
             src="/youtubeImg.png"
             width={0}
@@ -74,11 +74,8 @@ const ChatBotPage = () => {
             alt="Tutorials for get started with eCoO"
           />
           <p>
-            For more information, please visit our{" "}
-            <a href="https://www.youtube.com/watch?v=vrMAwJkKHaE&list=PLw-SKwgtg9pVjxeGM59-Q9sfq32lVHkJ8&index=2">
-              web
-            </a>
-            .
+            For more information, please visit our 
+            <a href="https://www.youtube.com/@departmentofcommercesrilan8118" className="text-purple-800 "> Department of Commerce Sri Lanka youtube channel</a>.
           </p>
         </div>
       ),
