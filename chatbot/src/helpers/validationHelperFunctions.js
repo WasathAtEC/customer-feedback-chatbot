@@ -28,6 +28,14 @@ const validateField = (name, value, errors) => {
         }
     }
 
+    if (name === 'message') {
+        if (!value.trim()) {
+            newErrors.message = 'Additional message is required';
+        } else {
+            delete newErrors.message;
+        }
+    }
+
     return newErrors;
 }
  

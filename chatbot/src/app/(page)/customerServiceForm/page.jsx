@@ -45,6 +45,7 @@ const CustomerServiceForm = () => {
       name,
       email,
       subject,
+      message,
     });
 
     setErrors(newErrors);
@@ -201,10 +202,21 @@ const CustomerServiceForm = () => {
           <textarea
             id="message"
             placeholder="Additional message"
-            onChange={(e) => setmessage(e.target.value)}
+            onChange={(e) => {
+              setmessage(e.target.value);
+              const newErrors = validateField(
+                "message",
+                e.target.value,
+                errors
+              );
+              setErrors(newErrors);
+            }}
             value={message}
             rows="4"
-            className="bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1"
+            className={`bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1 ${
+              errors.subject ? "border-red-500" : ""
+            }`}
+            required
           ></textarea>
         </div>
         <div className="mb-8">
@@ -224,9 +236,9 @@ const CustomerServiceForm = () => {
           <button
             type="button"
             onClick={handleConfirmUpload}
-            className="w-[130px] h-7 bg-green-600 rounded-md border border-stone-600 border-opacity-20 text-white text-sm font-semibold px-2 hover:bg-green-500 hover:text-white mt-1"
+            className="w-[120px] h-7 bg-green-600 rounded-md border border-stone-600 border-opacity-20 text-white text-sm font-semibold px-2 hover:bg-green-500 hover:text-white mt-1"
           >
-            Confirm Upload
+            Upload
           </button>
         </div>
         <div className="text-center">
