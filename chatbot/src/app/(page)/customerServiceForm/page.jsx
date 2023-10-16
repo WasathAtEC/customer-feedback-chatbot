@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import validateField from "../../../../src/helpers/validationHelperFunctions";
 import handleSubmit from "../../../../src/helpers/handleSubmit";
 import uploadFileAndGetUrl from "../../../../src/helpers/fileUpload";
+import { useRouter } from 'next/navigation'
 
 const CustomerServiceForm = () => {
+  const router = useRouter()
   const [name, setname] = useState("");
   const [email, setEmail] = useState("");
   const [issueCategory, setissueCategory] = useState("");
@@ -64,6 +66,7 @@ const CustomerServiceForm = () => {
 
       if (submissionResult === "Form submitted successfully!") {
         alert("Form submitted successfully!");
+        router.push('/');
       } else {
         alert("Form submission failed.");
       }
@@ -219,7 +222,7 @@ const CustomerServiceForm = () => {
             required
           ></textarea>
         </div>
-        <div className="mb-8">
+        <div className="mb-3">
           <label
             htmlFor="file"
             className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
@@ -236,11 +239,12 @@ const CustomerServiceForm = () => {
           <button
             type="button"
             onClick={handleConfirmUpload}
-            className="w-[120px] h-7 bg-green-600 rounded-md border border-stone-600 border-opacity-20 text-white text-sm font-semibold px-2 hover:bg-green-500 hover:text-white mt-1"
+            className="w-[120px] h-7 bg-green-600 rounded-md border border-stone-600 border-opacity-20 text-white text-sm font-semibold px-2 hover:bg-green-500 hover:text-white mt-1 mb-6"
           >
             Upload
           </button>
         </div>
+        
         <div className="text-center">
           <button
             type="submit"
