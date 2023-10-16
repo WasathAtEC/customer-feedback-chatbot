@@ -78,10 +78,9 @@ const CustomerServiceForm = () => {
 
       if (submissionResult === "Form submitted successfully!") {
         setSubmitStatus("Submitted");
-        alert("Form submitted successfully!");
         router.push('/');
       } else {
-        alert("Form submission failed.");
+        setSubmitStatus("Submit again");
       } 
       setIsSubmitting(false);
     }
