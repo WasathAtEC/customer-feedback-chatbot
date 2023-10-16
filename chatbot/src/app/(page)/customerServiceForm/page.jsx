@@ -64,7 +64,7 @@ const CustomerServiceForm = () => {
       <form
         onSubmit={onSubmit}
         className="px-10 pt-2 pb-8"
-        enctype="multipart/form-data"
+        encType="multipart/form-data"
       >
         <div className="mb-4">
           <label
