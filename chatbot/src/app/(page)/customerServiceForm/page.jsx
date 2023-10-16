@@ -19,8 +19,8 @@ const CustomerServiceForm = () => {
   const [uploadUrl, setUploadUrl] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadStatus, setUploadStatus] = useState("Upload");
-
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("Submit");
 
 
   const handleFileChange = (e) => {
@@ -63,6 +63,8 @@ const CustomerServiceForm = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
+      setIsSubmitting(true);
+
       const formData = new FormData();
       formData.append("company", "Company1");
       formData.append("name", name);
@@ -75,11 +77,13 @@ const CustomerServiceForm = () => {
       const submissionResult = await handleSubmit(formData);
 
       if (submissionResult === "Form submitted successfully!") {
+        setSubmitStatus("Submitted");
         alert("Form submitted successfully!");
         router.push('/');
       } else {
         alert("Form submission failed.");
-      }
+      } 
+      setIsSubmitting(false);
     }
   };
 
@@ -260,8 +264,9 @@ const CustomerServiceForm = () => {
           <button
             type="submit"
             className="w-[134px] h-11 bg-gradient-to-r from-blue-700 to-blue-400 rounded-md border border-stone-600 border-opacity-20 text-white text-lg font-semibold px-4 py-2 hover:from-cyan-600 hover:to-cyan-400"
+            disabled={isSubmitting}
           >
-            Submit
+            {isSubmitting ? "Submitting..." : submitStatus}
           </button>
         </div>
       </form>
