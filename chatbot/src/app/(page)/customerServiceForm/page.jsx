@@ -18,6 +18,8 @@ const CustomerServiceForm = () => {
   const [errors, setErrors] = useState({});
   const [uploadUrl, setUploadUrl] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState("Upload");
+
 
 
 
@@ -35,9 +37,9 @@ const CustomerServiceForm = () => {
         setUploadUrl(uploadUrl);
 
         if (uploadUrl) {
-          alert("File uploaded successfully. URL: " + uploadUrl);
+          setUploadStatus("Uploaded");
         } else {
-          alert("File upload failed.");
+          setUploadStatus("failed");
         }
       } catch (error) {
         console.error("Error during file upload:", error);
@@ -249,7 +251,7 @@ const CustomerServiceForm = () => {
             onClick={handleConfirmUpload}
             className="w-[120px] h-7 bg-green-600 rounded-md border border-stone-600 border-opacity-20 text-white text-sm font-semibold px-2 hover:bg-green-500 hover:text-white mt-1 mb-6"
           >
-            {isUploading ? "Uploading..." : "Upload"}
+            {isUploading ? "Uploading..." : uploadStatus}
           </button>
           {isUploading && <p>Uploading your file, please wait...</p>}
         </div>
