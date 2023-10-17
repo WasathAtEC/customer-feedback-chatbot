@@ -73,7 +73,7 @@ const CustomerServiceForm = () => {
       formData.append("message", message);
       formData.append("file", uploadUrl);
 
-      const submissionResult = await handleSubmit(formData);
+      const submissionResult = await handleSubmit(formData, uploadUrl);
 
       if (submissionResult === "Form submitted successfully!") {
         setSubmitStatus("Submitted");

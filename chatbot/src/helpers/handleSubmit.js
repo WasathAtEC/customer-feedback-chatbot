@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const handleSubmit = async (formData) => {
+const handleSubmit = async (formData, uploadUrl) => {
   try {
     //send form data with file url(blobName)
     const response = await axios.post(
@@ -9,6 +9,7 @@ const handleSubmit = async (formData) => {
       {
         headers: {
           "Content-Type": "application/json",
+          "blob-name": `${uploadUrl}`,
         },
       }
     );
