@@ -10,6 +10,7 @@ const CustomerServiceForm = () => {
   const router = useRouter();
   const [name, setname] = useState("");
   const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
   const [issueCategory, setissueCategory] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setmessage] = useState("");
@@ -65,7 +66,7 @@ const CustomerServiceForm = () => {
       setIsSubmitting(true);
 
       const formData = new FormData();
-      formData.append("company", "Company1");
+      formData.append("company", company);
       formData.append("name", name);
       formData.append("email", email);
       formData.append("issueCategory", issueCategory);
@@ -159,6 +160,29 @@ const CustomerServiceForm = () => {
         </div>
         <div className="mb-4">
           <label
+            htmlFor="Company"
+            className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
+          >
+            Company?
+          </label>
+          <select
+            id="company"
+            onChange={(e) => setCompany(e.target.value)}
+            value={company}
+            className="bg-[#EEF9FC] rounded-md border border-[#595656] border-opacity-40 w-full p-2 mt-1"
+            required
+          >
+            <option value="" disabled>
+              Select a Company
+            </option>
+            <option value="Company1">Company 1</option>
+            <option value="Company2">Company 2</option>
+            <option value="Company3">Company 3</option>
+            <option value="Company4">Company 4</option>
+          </select>
+        </div>
+        <div className="mb-4">
+          <label
             htmlFor="issueCategory"
             className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
           >
@@ -179,6 +203,7 @@ const CustomerServiceForm = () => {
             <option value="Issue 3">Other</option>
           </select>
         </div>
+        
         <div className="mb-4">
           <label
             htmlFor="subject"
