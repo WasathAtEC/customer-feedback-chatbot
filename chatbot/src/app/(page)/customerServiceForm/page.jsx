@@ -56,6 +56,7 @@ const CustomerServiceForm = () => {
       email,
       subject,
       message,
+      issueCategory,
     });
 
     setErrors(newErrors);
@@ -159,10 +160,7 @@ const CustomerServiceForm = () => {
         </div>
         
         <div className="mb-4">
-          <label
-            htmlFor="issueCategory"
-            className="text-stone-950 text-opacity-70 text-[16px] font-extrabold"
-          >
+          <label htmlFor="issueCategory" className="text-stone-950 text-opacity-70 text-[16px] font-extrabold">
             What's the issueCategory?
           </label>
           <select
@@ -179,6 +177,7 @@ const CustomerServiceForm = () => {
             <option value="Issue 2">Billing Inquiry</option>
             <option value="Issue 3">Other</option>
           </select>
+          {errors.issueCategory && <p className="text-red-600 text-sm">{errors.issueCategory} </p>}
         </div>
         
         <div className="mb-4">

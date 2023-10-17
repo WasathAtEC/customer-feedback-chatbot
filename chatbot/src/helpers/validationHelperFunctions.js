@@ -36,6 +36,14 @@ const validateField = (name, value, errors) => {
         }
     }
 
+    if (name === 'issueCategory') {
+        if (!value) {
+          newErrors.issueCategory = 'Issue Category is required';
+        } else {
+          delete newErrors.issueCategory;
+        }
+      }
+
     return newErrors;
 }
  
