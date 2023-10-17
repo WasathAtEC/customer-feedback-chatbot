@@ -82,7 +82,7 @@ const CustomerServiceForm = () => {
           router.push("/");
         }, 2000);
       } else {
-        setSubmitStatus("Submit again");
+        setSubmitStatus("Failed");
       }
       setIsSubmitting(false);
     }
