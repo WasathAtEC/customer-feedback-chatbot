@@ -254,7 +254,7 @@ const CustomerServiceForm = () => {
           <button
             type="button"
             onClick={handleConfirmUpload}
-            className="w-[120px] h-7 bg-green-600 rounded-md border border-stone-600 border-opacity-20 text-white text-sm font-semibold px-2 hover:bg-green-500 hover:text-white mt-1 mb-6"
+            className="w-[120px] h-7 bg-green-600 rounded-md border border-stone-600 border-opacity-20 text-white text-sm font-semibold px-2 hover:bg-green-500 hover:text-white mt-1"
           >
             {isUploading ? "Uploading..." : uploadStatus}
           </button>
@@ -264,7 +264,7 @@ const CustomerServiceForm = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="w-[134px] h-11 bg-gradient-to-r from-blue-700 to-blue-400 rounded-md border border-stone-600 border-opacity-20 text-white text-lg font-semibold px-4 py-2 hover:from-cyan-600 hover:to-cyan-400"
+            className="w-[134px] h-11 bg-gradient-to-r from-blue-700 to-blue-400 rounded-md border border-stone-600 border-opacity-20 text-white text-lg font-semibold px-4 py-2 mt-6 hover:from-cyan-600 hover:to-cyan-400"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : submitStatus}
