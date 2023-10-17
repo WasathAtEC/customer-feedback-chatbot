@@ -21,21 +21,46 @@ const ChatBotPage = () => {
       issue: "How to Register/Create a profile",
       details: (
         <div>
-          <p className="pb-2">Company Registration : Tutorial for existing exporters with DoC</p>
+          <p className="pb-2">
+            Company Registration : Tutorial for existing exporters with DoC
+          </p>
           <a href="https://www.youtube.com/watch?v=vrMAwJkKHaE&list=PLw-SKwgtg9pVjxeGM59-Q9sfq32lVHkJ8&index=2">
-          <Image
-            src="/youtubeImg.png"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: "auto", height: "auto"}} 
-            alt="tutorial for Company registration"
-          />
+            <Image
+              src="/youtubeImg.png"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "auto", height: "auto" }}
+              alt="tutorial for Company registration"
+            />
           </a>
-          
+          <p className="my-2">
+            Sinhala -{" "}
+            <a
+              href="https://www.youtube.com/watch?v=X1JMisyWYxY"
+              className="text-purple-800 "
+            >
+              Tutorial Video
+            </a>{" "}
+            <br />
+            Tamil -{" "}
+            <a
+              href="https://www.youtube.com/watch?v=b3W1PvPOgLo"
+              className="text-purple-800 "
+            >
+              Tutorial Video
+            </a>
+          </p>
           <p>
-            For more information, please visit our 
-            <a href="https://www.youtube.com/@departmentofcommercesrilan8118" className="text-purple-800 "> Department of Commerce Sri Lanka youtube channel</a>.
+            For more information, please visit
+            <a
+              href="https://www.youtube.com/@departmentofcommercesrilan8118"
+              className="text-purple-800 "
+            >
+              {" "}
+              Department of Commerce Sri Lanka
+            </a>
+            .
           </p>
         </div>
       ),
@@ -54,8 +79,15 @@ const ChatBotPage = () => {
             alt="Tutorial for login/sign in"
           />
           <p>
-            For more information, please visit our 
-            <a href="https://www.youtube.com/@departmentofcommercesrilan8118" className="text-purple-800 "> Department of Commerce Sri Lanka youtube channel</a>.
+            For more information, please visit
+            <a
+              href="https://www.youtube.com/@departmentofcommercesrilan8118"
+              className="text-purple-800 "
+            >
+              {" "}
+              Department of Commerce Sri Lanka
+            </a>
+            .
           </p>
         </div>
       ),
@@ -73,9 +105,17 @@ const ChatBotPage = () => {
             style={{ width: "auto", height: "auto" }}
             alt="Tutorials for get started with eCoO"
           />
+
           <p>
-            For more information, please visit our 
-            <a href="https://www.youtube.com/@departmentofcommercesrilan8118" className="text-purple-800 "> Department of Commerce Sri Lanka youtube channel</a>.
+            For more information, please visit
+            <a
+              href="https://www.youtube.com/@departmentofcommercesrilan8118"
+              className="text-purple-800 "
+            >
+              {" "}
+              Department of Commerce Sri Lanka
+            </a>
+            .
           </p>
         </div>
       ),
@@ -86,7 +126,7 @@ const ChatBotPage = () => {
     <div className="max-w-md mx-auto my-10 shadow-md rounded-xl bg-[#C7EFF8]">
       <div className="bg-gradient-to-r from-[rgb(48,84,217)] to-[#50ADF2] p-5 mb-2 rounded-t-xl drop-shadow-lg flex flex-row gap-8 justify-center items-center">
         <div>
-          <Image src="/Vector.svg" width={60} height={60} alt="chat bot"/>
+          <Image src="/Vector.svg" width={60} height={60} alt="chat bot" />
         </div>
         <div>
           <h1 className="text-center text-white text-[32px] font-extrabold pb-1">
