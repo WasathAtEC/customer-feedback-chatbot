@@ -18,7 +18,6 @@ const uploadFileAndGetUrl = async (file) => {
     );
 
     if (response.status === 201) {
-      console.log(response.data.blobName);
       return response.data.blobName;
     } else if(response.status === 400 ) {
       return null;
