@@ -71,7 +71,6 @@ const CustomerServiceForm = () => {
       formData.append("issueCategory", issueCategory);
       formData.append("subject", subject);
       formData.append("message", message);
-      formData.append("file", uploadUrl);
 
       const submissionResult = await handleSubmit(formData, uploadUrl);
 
